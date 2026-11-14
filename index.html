@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🏡 Convite Oficial — Casa do Vovô Gilson | Funil, Ijaci-MG</title>
+    <meta name="description" content="Você foi OFICIALMENTE convidado(a) para um final de semana inesquecível na Casa do Vovô Gilson, no Funil em Ijaci-MG. Confirme sua presença!">
+    <meta property="og:title" content="Convite OFICIAL — Casa do Vovô Gilson">
+    <meta property="og:description" content="Você foi formalmente convidado(a) para um final de semana no Funil! Confirme sua presença.">
+    <meta property="og:image" content="img/funil.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gold: #c9a84c;
+            --gold-light: #f0d78c;
+            --dark: #1a1a2e;
+            --dark2: #16213e;
+            --cream: #faf8f0;
+            --green: #2d6a4f;
+            --green-light: #52b788;
+            --red: #c1121f;
+            --white: #ffffff;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--cream);
+            color: var(--dark);
+            overflow-x: hidden;
+        }
+
+        /* HERO */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+        }
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background: url('img/funil.jpg') center/cover no-repeat;
+            filter: brightness(0.4);
+            z-index: 0;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            padding: 2rem;
+            max-width: 800px;
+        }
+
+        .selo {
+            display: inline-block;
+            border: 3px solid var(--gold);
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+            line-height: 120px;
+            font-family: 'Playfair Display', serif;
+            font-weight: 900;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--gold);
+            margin-bottom: 1.5rem;
+            position: relative;
+            animation: pulse 2s ease-in-out infinite;
+        }
+        .selo::after {
+            content: '✦';
+            font-size: 2rem;
+            display: block;
+            line-height: 1;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .selo-text {
+            position: absolute;
+            top: 8px; left: 8px; right: 8px; bottom: 8px;
+            border: 1px solid var(--gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+            font-size: 0.55rem;
+            line-height: 1.3;
+        }
+
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 0 20px rgba(201,168,76,0.3); }
+            50% { box-shadow: 0 0 40px rgba(201,168,76,0.6); }
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 6vw, 3.5rem);
+            color: var(--white);
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+        }
+        .hero h1 span {
+            color: var(--gold-light);
+            display: block;
+            font-family: 'Dancing Script', cursive;
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
+        }
+        .hero .subtitulo {
+            color: rgba(255,255,255,0.85);
+            font-size: 1.1rem;
+            font-weight: 300;
+            margin-top: 0.5rem;
+            letter-spacing: 1px;
+        }
+        .hero .badge-oficial {
+            display: inline-block;
+            background: var(--red);
+            color: var(--white);
+            padding: 0.5rem 1.5rem;
+            border-radius: 4px;
+            font-weight: 700;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-top: 1.5rem;
+            animation: shake 3s ease-in-out infinite;
+        }
+
+        @keyframes shake {
+            0%, 90%, 100% { transform: rotate(0); }
+            92% { transform: rotate(-2deg); }
+            94% { transform: rotate(2deg); }
+            96% { transform: rotate(-2deg); }
+            98% { transform: rotate(2deg); }
+        }
+
+        .scroll-hint {
+            position: absolute;
+            bottom: 2rem;
+            z-index: 1;
+            color: var(--gold-light);
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            animation: bounce 2s infinite;
+        }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(10px); }
+        }
+
+        /* SECTIONS */
+        section {
+            padding: 4rem 1.5rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+        .section-divider {
+            text-align: center;
+            color: var(--gold);
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        /* DECRETO */
+        .decreto {
+            background: var(--white);
+            border: 2px solid var(--gold);
+            border-radius: 12px;
+            padding: 2.5rem 2rem;
+            position: relative;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+        }
+        .decreto::before {
+            content: '📜';
+            font-size: 2.5rem;
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--cream);
+            padding: 0 1rem;
+        }
+        .decreto h3 {
+            font-family: 'Playfair Display', serif;
+            text-align: center;
+            font-size: 1.3rem;
+            color: var(--dark);
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+        .decreto p {
+            line-height: 1.8;
+            text-align: justify;
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+        .decreto .assinatura {
+            text-align: right;
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.8rem;
+            color: var(--dark);
+            margin-top: 1.5rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--gold);
+        }
+        .decreto .cargo {
+            text-align: right;
+            font-size: 0.8rem;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* DETALHES */
+        .detalhes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        .detalhe-card {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            transition: transform 0.3s;
+        }
+        .detalhe-card:hover {
+            transform: translateY(-4px);
+        }
+        .detalhe-card .icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .detalhe-card h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            margin-bottom: 0.3rem;
+            color: var(--dark);
+        }
+        .detalhe-card p {
+            color: #555;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        /* O QUE LEVAR */
+        .lista-levar {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 0.8rem;
+            margin-top: 1.5rem;
+        }
+        .lista-levar li {
+            background: var(--white);
+            padding: 0.8rem 1rem;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+
+        /* AVISO HUMOR */
+        .aviso-legal {
+            background: linear-gradient(135deg, var(--dark), var(--dark2));
+            color: var(--white);
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            margin: 2rem 0;
+        }
+        .aviso-legal h3 {
+            color: var(--gold-light);
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+        .aviso-legal p {
+            line-height: 1.7;
+            font-size: 0.95rem;
+            opacity: 0.9;
+        }
+        .aviso-legal .emoji-big {
+            font-size: 3rem;
+            display: block;
+            margin-bottom: 1rem;
+        }
+
+        /* FOTO GALERIA */
+        .foto-destaque {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+            margin: 2rem 0;
+        }
+
+        /* FORM */
+        .form-section {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 2.5rem 2rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            border: 2px solid var(--green-light);
+        }
+
+        .form-group {
+            margin-bottom: 1.2rem;
+        }
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.4rem;
+            font-size: 0.9rem;
+            color: var(--dark);
+        }
+        .form-group input {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: 'Inter', sans-serif;
+            transition: border-color 0.3s;
+        }
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--green);
+        }
+
+        .acompanhante-item {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+            animation: fadeIn 0.3s ease;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .acompanhante-item input {
+            flex: 1;
+            padding: 0.7rem 1rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            font-family: 'Inter', sans-serif;
+        }
+        .acompanhante-item input:focus {
+            outline: none;
+            border-color: var(--green);
+        }
+        .btn-remove {
+            background: var(--red);
+            color: var(--white);
+            border: none;
+            border-radius: 8px;
+            width: 42px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: opacity 0.2s;
+        }
+        .btn-remove:hover { opacity: 0.8; }
+
+        .btn-add {
+            background: none;
+            border: 2px dashed var(--green);
+            color: var(--green);
+            padding: 0.6rem 1.2rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 600;
+            font-family: 'Inter', sans-serif;
+            transition: all 0.3s;
+            margin-top: 0.5rem;
+        }
+        .btn-add:hover {
+            background: var(--green);
+            color: var(--white);
+        }
+
+        .declaracao {
+            background: #fef9e7;
+            border: 1px solid var(--gold);
+            border-radius: 8px;
+            padding: 1.2rem;
+            margin: 1.5rem 0;
+            font-size: 0.85rem;
+            line-height: 1.6;
+        }
+        .declaracao strong {
+            color: var(--dark);
+        }
+        .declaracao .nome-dinamico {
+            color: var(--green);
+            font-weight: 700;
+            text-decoration: underline;
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.8rem;
+            margin: 1.5rem 0;
+        }
+        .checkbox-group input[type="checkbox"] {
+            width: 22px;
+            height: 22px;
+            margin-top: 2px;
+            accent-color: var(--green);
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+        .checkbox-group label {
+            font-size: 0.9rem;
+            line-height: 1.5;
+            cursor: pointer;
+        }
+
+        .btn-confirmar {
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(135deg, var(--green), var(--green-light));
+            color: var(--white);
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            font-family: 'Inter', sans-serif;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        .btn-confirmar:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(45,106,79,0.4);
+        }
+        .btn-confirmar:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        /* SUCESSO */
+        .sucesso-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.8);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+        .sucesso-overlay.active { display: flex; }
+        .sucesso-card {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 2.5rem;
+            text-align: center;
+            max-width: 500px;
+            width: 100%;
+            animation: popIn 0.5s ease;
+        }
+        @keyframes popIn {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+        .sucesso-card .check { font-size: 4rem; }
+        .sucesso-card h2 {
+            font-family: 'Playfair Display', serif;
+            margin: 1rem 0 0.5rem;
+            color: var(--green);
+        }
+        .sucesso-card p { line-height: 1.6; color: #555; }
+        .sucesso-card .protocolo {
+            background: #f0f0f0;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            font-family: monospace;
+            font-size: 0.85rem;
+            margin: 1rem 0;
+            display: inline-block;
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background: var(--dark);
+            color: rgba(255,255,255,0.6);
+            font-size: 0.8rem;
+        }
+        footer .gold { color: var(--gold-light); }
+
+        /* CONTADOR */
+        .countdown {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+        .countdown-item {
+            background: var(--white);
+            border-radius: 10px;
+            padding: 1rem 1.2rem;
+            min-width: 80px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+        }
+        .countdown-item .number {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--green);
+        }
+        .countdown-item .label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #888;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 600px) {
+            section { padding: 3rem 1rem; }
+            .decreto { padding: 2rem 1.2rem; }
+            .form-section { padding: 1.5rem 1.2rem; }
+            .selo { width: 90px; height: 90px; line-height: 90px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+        <div class="selo">
+            <div class="selo-text">CONVITE OFICIAL</div>
+        </div>
+        <h1>
+            Convite Oficial
+            <span>Casa do Vovô Gilson</span>
+        </h1>
+        <p class="subtitulo">Funil · Ijaci · Minas Gerais</p>
+        <div class="badge-oficial">⚠️ DOCUMENTO OFICIAL — NÃO IGNORE ⚠️</div>
+    </div>
+    <div class="scroll-hint">▼ ROLE PARA LER O DECRETO ▼</div>
+</section>
+
+<!-- DECRETO OFICIAL -->
+<section>
+    <div class="decreto">
+        <h3>Decreto de Convite nº 001/2026</h3>
+        <p>
+            <strong>O Senhor Gilson Vilela</strong>, no exercício pleno de suas atribuições como patriarca, 
+            anfitrião e dono do sítio situado no <strong>Funil, Ijaci — Minas Gerais</strong>, popularmente 
+            conhecido como <em>"Casa do Vovô Gilson"</em>,
+        </p>
+        <p>
+            <strong>CONSIDERANDO</strong> que certas pessoas têm, de forma reiterada e injustificada, 
+            alegado que "nunca foram convidadas" ou que "o convite foi só de boca";
+        </p>
+        <p>
+            <strong>CONSIDERANDO</strong> que tais alegações são desprovidas de fundamento, mas que, 
+            por precaução jurídica e para resguardo da honra do anfitrião, faz-se necessário 
+            formalizar o presente convite;
+        </p>
+        <p>
+            <strong>CONSIDERANDO</strong> que o Funil é um dos lugares mais bonitos de Minas Gerais 
+            e que seria uma lástima você perder essa oportunidade;
+        </p>
+        <p>
+            <strong>DECRETA:</strong>
+        </p>
+        <p>
+            <strong>Art. 1º</strong> — Fica OFICIALMENTE convidada toda a sua família para um 
+            <strong>final de semana inesquecível</strong> na Casa do Vovô Gilson, no Funil, Ijaci-MG.
+        </p>
+        <p>
+            <strong>Art. 2º</strong> — O presente convite é <strong>FORMAL, ESTRUTURADO, DOCUMENTADO e 
+            IRREFUTÁVEL</strong>, não podendo o convidado, em hipótese alguma, alegar 
+            desconhecimento ou ausência de convite.
+        </p>
+        <p>
+            <strong>Art. 3º</strong> — O convidado deverá confirmar presença através do formulário 
+            disponível nesta página, sob pena de ficar de fora da melhor comida de Minas.
+        </p>
+        <p>
+            <strong>Parágrafo único:</strong> O presente decreto entra em vigor na data de sua publicação, 
+            com efeitos retroativos a todos os convites verbais anteriores que "ninguém ouviu".
+        </p>
+        <div class="assinatura">Gilson Vilela</div>
+        <div class="cargo">Patriarca · Anfitrião · Dono do Sítio</div>
+    </div>
+</section>
+
+<!-- DETALHES DO EVENTO -->
+<section>
+    <h2 class="section-title">Detalhes do Evento</h2>
+    <div class="section-divider">✦ ✦ ✦</div>
+    
+    <div class="countdown" id="countdown">
+        <div class="countdown-item">
+            <div class="number" id="cd-dias">--</div>
+            <div class="label">Dias</div>
+        </div>
+        <div class="countdown-item">
+            <div class="number" id="cd-horas">--</div>
+            <div class="label">Horas</div>
+        </div>
+        <div class="countdown-item">
+            <div class="number" id="cd-min">--</div>
+            <div class="label">Minutos</div>
+        </div>
+        <div class="countdown-item">
+            <div class="number" id="cd-seg">--</div>
+            <div class="label">Segundos</div>
+        </div>
+    </div>
+
+    <div class="detalhes-grid">
+        <div class="detalhe-card">
+            <div class="icon">📅</div>
+            <h4>Quando</h4>
+            <p><strong>4 de Dezembro</strong> (sexta após o almoço) até <strong>6 de Dezembro</strong> (domingo)</p>
+        </div>
+        <div class="detalhe-card">
+            <div class="icon">📍</div>
+            <h4>Onde</h4>
+            <p><strong>Casa do Vovô Gilson</strong><br>Funil · Ijaci · MG</p>
+        </div>
+        <div class="detalhe-card">
+            <div class="icon">👨‍👩‍👧‍👦</div>
+            <h4>Quem</h4>
+            <p>Você + toda sua família!<br><em>A Família Vilela recebe de braços abertos</em></p>
+        </div>
+        <div class="detalhe-card">
+            <div class="icon">🍖</div>
+            <h4>Comida</h4>
+            <p>Comida mineira da melhor qualidade, feita com amor e muito tempero!</p>
+        </div>
+    </div>
+</section>
+
+<!-- FOTO DO FUNIL -->
+<section style="text-align:center;">
+    <h2 class="section-title">Conheça o Funil</h2>
+    <div class="section-divider">✦ ✦ ✦</div>
+    <img src="img/funil.jpg" alt="Funil — Ijaci, Minas Gerais" class="foto-destaque" onerror="this.style.display='none'">
+    <p style="color:#888; font-size:0.9rem; margin-top:1rem;">
+        Um verdadeiro paraíso escondido em Minas Gerais 🏞️
+    </p>
+</section>
+
+<!-- O QUE LEVAR -->
+<section>
+    <h2 class="section-title">Sugestões para Levar</h2>
+    <div class="section-divider">✦ ✦ ✦</div>
+    <ul class="lista-levar">
+        <li>🩴 Roupas leves e confortáveis</li>
+        <li>🏊 Roupa de banho</li>
+        <li>🧴 Protetor solar</li>
+        <li>🎣 Espírito de aventura</li>
+        <li>🎶 Boa vontade pra cantar</li>
+        <li>🤗 Sorriso no rosto</li>
+        <li>📸 Câmera / celular carregado</li>
+        <li>💤 Vontade de descansar</li>
+    </ul>
+</section>
+
+<!-- AVISO LEGAL (HUMORÍSTICO) -->
+<section>
+    <div class="aviso-legal">
+        <span class="emoji-big">⚖️</span>
+        <h3>Aviso Legal Importantíssimo</h3>
+        <p>
+            Este convite tem <strong>validade jurídica de compadre</strong> e está registrado em 
+            cartório imaginário. Qualquer tentativa de alegar que "não sabia", "não vi" ou 
+            "foi convite de boca" será <strong>sumariamente desmentida</strong> com print desta página 
+            e depoimento de testemunhas (inclusive o cachorro do sítio).<br><br>
+            Em caso de não comparecimento sem justificativa, o convidado fica sujeito a 
+            <strong>olhar de reprovação do Seu Gilson</strong> por tempo indeterminado. 👀
+        </p>
+    </div>
+</section>
+
+<!-- FORMULÁRIO DE CONFIRMAÇÃO -->
+<section id="confirmar">
+    <h2 class="section-title">Confirme sua Presença</h2>
+    <div class="section-divider">✦ ✦ ✦</div>
+    
+    <div class="form-section">
+        <form id="formConfirmacao" action="https://formsubmit.co/gavjr1911@gmail.com" method="POST">
+            <!-- FormSubmit config -->
+            <input type="hidden" name="_subject" value="🏡 CONFIRMAÇÃO — Casa do Vovô Gilson">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_next" value="">
+            <input type="text" name="_honey" style="display:none">
+            
+            <input type="hidden" name="_autoresponse" value="✅ Sua presença foi OFICIALMENTE confirmada para a Casa do Vovô Gilson, no Funil em Ijaci-MG, de 4 a 6 de Dezembro de 2026! A Família Vilela aguarda vocês de braços abertos! 🏡">
+
+            <div class="form-group">
+                <label>👤 Seu nome completo *</label>
+                <input type="text" name="Nome" id="nomeConvidado" required placeholder="Digite seu nome completo">
+            </div>
+
+            <div class="form-group">
+                <label>📱 Seu WhatsApp *</label>
+                <input type="tel" name="WhatsApp" required placeholder="(31) 99999-9999">
+            </div>
+            
+            <div class="form-group">
+                <label>👨‍👩‍👧‍👦 Acompanhantes</label>
+                <div id="acompanhantes-container"></div>
+                <input type="hidden" name="Acompanhantes" id="acompanhantesHidden">
+                <input type="hidden" name="Total de Pessoas" id="totalPessoas">
+                <button type="button" class="btn-add" onclick="addAcompanhante()">
+                    + Adicionar acompanhante
+                </button>
+            </div>
+
+            <div class="declaracao" id="declaracaoTexto">
+                <strong>📋 Declaração Formal de Confirmação:</strong><br><br>
+                "Eu, <span class="nome-dinamico" id="nomeDinamico">[seu nome]</span>, 
+                estou confirmando <strong>com toda certeza</strong> que vou participar do evento 
+                <em>Casa do Vovô Gilson</em> no Funil, Ijaci-MG, nos dias 4 a 6 de Dezembro de 2026, 
+                e declaro que fui <strong>convidado(a) pelo Senhor Gilson, com todas as letras</strong>, 
+                para participar desse evento. Não poderei, em tempo algum, alegar que não fui 
+                convidado(a), pois este documento serve como prova cabal e irrefutável do convite."
+            </div>
+            <input type="hidden" name="Declaração" id="declaracaoHidden">
+
+            <div class="checkbox-group">
+                <input type="checkbox" id="checkConfirma" required>
+                <label for="checkConfirma">
+                    <strong>Eu li e concordo com a declaração acima.</strong> Confirmo que fui 
+                    OFICIALMENTE convidado(a) pelo Senhor Gilson e que comparecerei ao evento 
+                    com toda certeza do mundo. 🤝
+                </label>
+            </div>
+
+            <button type="submit" class="btn-confirmar" id="btnConfirmar">
+                ✅ CONFIRMAR PRESENÇA OFICIALMENTE
+            </button>
+        </form>
+    </div>
+</section>
+
+<!-- OVERLAY SUCESSO -->
+<div class="sucesso-overlay" id="sucessoOverlay">
+    <div class="sucesso-card">
+        <div class="check">🎉</div>
+        <h2>Presença Confirmada!</h2>
+        <p>
+            Sua confirmação foi registrada com sucesso e enviada ao 
+            <strong>Senhor Gilson</strong>. Agora é OFICIAL — você não pode mais voltar atrás! 😄
+        </p>
+        <div class="protocolo" id="protocolo"></div>
+        <p style="margin-top:1rem; font-size:0.85rem; color:#888;">
+            Uma cópia foi enviada para o e-mail do anfitrião. <br>
+            Nos vemos no Funil! 🏡
+        </p>
+    </div>
+</div>
+
+<footer>
+    <p class="gold">Casa do Vovô Gilson · Funil · Ijaci — MG</p>
+    <p style="margin-top:0.5rem;">Convite OFICIAL nº 001/2026 — Família Vilela</p>
+    <p style="margin-top:0.5rem;">Feito com ❤️ e uma pitada de "eu avisei que tinha convite"</p>
+</footer>
+
+<script>
+    // --- COUNTDOWN ---
+    function atualizarContador() {
+        const evento = new Date('2026-12-04T13:00:00-03:00');
+        const agora = new Date();
+        const diff = evento - agora;
+        if (diff <= 0) {
+            document.getElementById('cd-dias').textContent = '🎉';
+            document.getElementById('cd-horas').textContent = 'É';
+            document.getElementById('cd-min').textContent = 'HJ';
+            document.getElementById('cd-seg').textContent = '!';
+            return;
+        }
+        const d = Math.floor(diff / (1000*60*60*24));
+        const h = Math.floor((diff % (1000*60*60*24)) / (1000*60*60));
+        const m = Math.floor((diff % (1000*60*60)) / (1000*60));
+        const s = Math.floor((diff % (1000*60)) / 1000);
+        document.getElementById('cd-dias').textContent = d;
+        document.getElementById('cd-horas').textContent = h;
+        document.getElementById('cd-min').textContent = m;
+        document.getElementById('cd-seg').textContent = s;
+    }
+    setInterval(atualizarContador, 1000);
+    atualizarContador();
+
+    // --- ACOMPANHANTES ---
+    let acompCount = 0;
+    function addAcompanhante() {
+        acompCount++;
+        const container = document.getElementById('acompanhantes-container');
+        const div = document.createElement('div');
+        div.className = 'acompanhante-item';
+        div.id = 'acomp-' + acompCount;
+        div.innerHTML = `
+            <input type="text" placeholder="Nome do acompanhante ${acompCount}" class="acomp-input">
+            <button type="button" class="btn-remove" onclick="removeAcompanhante('acomp-${acompCount}')">✕</button>
+        `;
+        container.appendChild(div);
+    }
+    function removeAcompanhante(id) {
+        document.getElementById(id).remove();
+    }
+
+    // --- NOME DINÂMICO ---
+    document.getElementById('nomeConvidado').addEventListener('input', function() {
+        const nome = this.value.trim() || '[seu nome]';
+        document.getElementById('nomeDinamico').textContent = nome;
+    });
+
+    // --- SUBMIT ---
+    document.getElementById('formConfirmacao').addEventListener('submit', function(e) {
+        const nome = document.getElementById('nomeConvidado').value.trim();
+        
+        // Coletar acompanhantes
+        const inputs = document.querySelectorAll('.acomp-input');
+        const acomps = [];
+        inputs.forEach(inp => {
+            if (inp.value.trim()) acomps.push(inp.value.trim());
+        });
+        
+        document.getElementById('acompanhantesHidden').value = acomps.length > 0 
+            ? acomps.join(', ') 
+            : 'Nenhum';
+        document.getElementById('totalPessoas').value = 1 + acomps.length;
+        
+        // Declaração
+        const decl = `Eu, ${nome}, estou confirmando com toda certeza que vou participar do evento Casa do Vovô Gilson no Funil, Ijaci-MG, nos dias 4 a 6 de Dezembro de 2026, e declaro que fui convidado(a) pelo Senhor Gilson, com todas as letras, para participar desse evento.`;
+        document.getElementById('declaracaoHidden').value = decl;
+        
+        // Configurar URL de retorno
+        const nextUrl = window.location.href.split('?')[0] + '?confirmado=' + encodeURIComponent(nome);
+        document.querySelector('input[name="_next"]').value = nextUrl;
+    });
+
+    // --- CHECK SE VOLTOU DA CONFIRMAÇÃO ---
+    const params = new URLSearchParams(window.location.search);
+    if (params.has('confirmado')) {
+        const nome = decodeURIComponent(params.get('confirmado'));
+        const overlay = document.getElementById('sucessoOverlay');
+        overlay.classList.add('active');
+        const proto = 'CVG-' + Date.now().toString(36).toUpperCase();
+        document.getElementById('protocolo').textContent = 'Protocolo: ' + proto;
+        // Limpar URL
+        history.replaceState(null, '', window.location.pathname);
+    }
+
+    // --- FECHAR OVERLAY ---
+    document.getElementById('sucessoOverlay').addEventListener('click', function(e) {
+        if (e.target === this) this.classList.remove('active');
+    });
+</script>
+
+</body>
+</html>
