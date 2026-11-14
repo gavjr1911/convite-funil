@@ -5,9 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>🏡 Convite Oficial — Casa do Vovô Gilson | Funil, Ijaci-MG</title>
     <meta name="description" content="Você foi OFICIALMENTE convidado(a) para um final de semana inesquecível na Casa do Vovô Gilson, no Funil em Ijaci-MG. Confirme sua presença!">
-    <meta property="og:title" content="Convite OFICIAL — Casa do Vovô Gilson">
-    <meta property="og:description" content="Você foi formalmente convidado(a) para um final de semana no Funil! Confirme sua presença.">
-    <meta property="og:image" content="img/funil.jpg">
+    <meta property="og:title" content="🏡 Convite OFICIAL — Casa do Vovô Gilson">
+    <meta property="og:description" content="Você foi formalmente convidado(a) para um final de semana no Funil! Churrasco, lancha, jet ski e muito mais. Confirme já!">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
     <style>
@@ -21,10 +20,12 @@
             --green-light: #52b788;
             --red: #c1121f;
             --white: #ffffff;
+            --sky1: #1a2a4a;
+            --sky2: #2a4a7a;
+            --sky3: #f4a460;
+            --water: #2a6a9a;
         }
-
         * { margin: 0; padding: 0; box-sizing: border-box; }
-
         body {
             font-family: 'Inter', sans-serif;
             background: var(--cream);
@@ -32,7 +33,7 @@
             overflow-x: hidden;
         }
 
-        /* HERO */
+        /* ======= HERO COM ILUSTRAÇÃO ======= */
         .hero {
             position: relative;
             min-height: 100vh;
@@ -42,17 +43,25 @@
             justify-content: center;
             text-align: center;
             overflow: hidden;
+            background: linear-gradient(180deg, #1a2a4a 0%, #2a4a7a 30%, #5a9abf 50%, #8ac4e0 60%, #d4eaf5 70%, #3a8a4a 70.1%, #2d6a3a 100%);
         }
-        .hero-bg {
+        .hero-illustration {
             position: absolute;
             inset: 0;
-            background: url('img/funil.jpg') center/cover no-repeat;
-            filter: brightness(0.4);
             z-index: 0;
+            overflow: hidden;
         }
+        .hero-illustration svg {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
         .hero-content {
             position: relative;
-            z-index: 1;
+            z-index: 2;
             padding: 2rem;
             max-width: 800px;
         }
@@ -73,6 +82,8 @@
             margin-bottom: 1.5rem;
             position: relative;
             animation: pulse 2s ease-in-out infinite;
+            background: rgba(0,0,0,0.3);
+            backdrop-filter: blur(4px);
         }
         .selo::after {
             content: '✦';
@@ -96,7 +107,6 @@
             font-size: 0.55rem;
             line-height: 1.3;
         }
-
         @keyframes pulse {
             0%, 100% { box-shadow: 0 0 20px rgba(201,168,76,0.3); }
             50% { box-shadow: 0 0 40px rgba(201,168,76,0.6); }
@@ -107,20 +117,22 @@
             font-size: clamp(2rem, 6vw, 3.5rem);
             color: var(--white);
             margin-bottom: 0.5rem;
-            text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+            text-shadow: 2px 2px 15px rgba(0,0,0,0.7);
         }
         .hero h1 span {
             color: var(--gold-light);
             display: block;
             font-family: 'Dancing Script', cursive;
             font-size: clamp(2.5rem, 8vw, 4.5rem);
+            text-shadow: 2px 3px 15px rgba(0,0,0,0.6);
         }
         .hero .subtitulo {
-            color: rgba(255,255,255,0.85);
+            color: rgba(255,255,255,0.9);
             font-size: 1.1rem;
             font-weight: 300;
             margin-top: 0.5rem;
             letter-spacing: 1px;
+            text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
         }
         .hero .badge-oficial {
             display: inline-block;
@@ -134,8 +146,8 @@
             letter-spacing: 3px;
             margin-top: 1.5rem;
             animation: shake 3s ease-in-out infinite;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
         }
-
         @keyframes shake {
             0%, 90%, 100% { transform: rotate(0); }
             92% { transform: rotate(-2deg); }
@@ -147,11 +159,12 @@
         .scroll-hint {
             position: absolute;
             bottom: 2rem;
-            z-index: 1;
+            z-index: 2;
             color: var(--gold-light);
             font-size: 0.8rem;
             letter-spacing: 2px;
             animation: bounce 2s infinite;
+            text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
         }
         @keyframes bounce {
             0%, 100% { transform: translateY(0); }
@@ -159,12 +172,7 @@
         }
 
         /* SECTIONS */
-        section {
-            padding: 4rem 1.5rem;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
+        section { padding: 4rem 1.5rem; max-width: 800px; margin: 0 auto; }
         .section-title {
             font-family: 'Playfair Display', serif;
             font-size: 2rem;
@@ -172,12 +180,7 @@
             margin-bottom: 0.5rem;
             color: var(--dark);
         }
-        .section-divider {
-            text-align: center;
-            color: var(--gold);
-            font-size: 1.5rem;
-            margin-bottom: 2rem;
-        }
+        .section-divider { text-align: center; color: var(--gold); font-size: 1.5rem; margin-bottom: 2rem; }
 
         /* DECRETO */
         .decreto {
@@ -207,12 +210,7 @@
             text-transform: uppercase;
             letter-spacing: 3px;
         }
-        .decreto p {
-            line-height: 1.8;
-            text-align: justify;
-            margin-bottom: 1rem;
-            font-size: 1rem;
-        }
+        .decreto p { line-height: 1.8; text-align: justify; margin-bottom: 1rem; font-size: 1rem; }
         .decreto .assinatura {
             text-align: right;
             font-family: 'Dancing Script', cursive;
@@ -222,13 +220,38 @@
             padding-top: 1rem;
             border-top: 1px solid var(--gold);
         }
-        .decreto .cargo {
-            text-align: right;
-            font-size: 0.8rem;
-            color: #666;
-            text-transform: uppercase;
-            letter-spacing: 2px;
+        .decreto .cargo { text-align: right; font-size: 0.8rem; color: #666; text-transform: uppercase; letter-spacing: 2px; }
+
+        /* ATIVIDADES */
+        .atividades-hero {
+            background: linear-gradient(135deg, #1a4a2e, #2d6a4f);
+            border-radius: 16px;
+            padding: 2.5rem 2rem;
+            color: white;
+            text-align: center;
+            margin: 2rem 0;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
         }
+        .atividades-hero h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--gold-light);
+        }
+        .atividades-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 1rem;
+        }
+        .atividade-item {
+            background: rgba(255,255,255,0.1);
+            border-radius: 12px;
+            padding: 1.2rem 0.8rem;
+            transition: transform 0.3s, background 0.3s;
+        }
+        .atividade-item:hover { transform: translateY(-4px); background: rgba(255,255,255,0.18); }
+        .atividade-item .emoji { font-size: 2.5rem; display: block; margin-bottom: 0.4rem; }
+        .atividade-item .nome { font-weight: 600; font-size: 0.9rem; }
 
         /* DETALHES */
         .detalhes-grid {
@@ -245,24 +268,10 @@
             box-shadow: 0 4px 20px rgba(0,0,0,0.06);
             transition: transform 0.3s;
         }
-        .detalhe-card:hover {
-            transform: translateY(-4px);
-        }
-        .detalhe-card .icon {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-        }
-        .detalhe-card h4 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.1rem;
-            margin-bottom: 0.3rem;
-            color: var(--dark);
-        }
-        .detalhe-card p {
-            color: #555;
-            font-size: 0.9rem;
-            line-height: 1.5;
-        }
+        .detalhe-card:hover { transform: translateY(-4px); }
+        .detalhe-card .icon { font-size: 2.5rem; margin-bottom: 0.5rem; }
+        .detalhe-card h4 { font-family: 'Playfair Display', serif; font-size: 1.1rem; margin-bottom: 0.3rem; color: var(--dark); }
+        .detalhe-card p { color: #555; font-size: 0.9rem; line-height: 1.5; }
 
         /* O QUE LEVAR */
         .lista-levar {
@@ -272,13 +281,7 @@
             gap: 0.8rem;
             margin-top: 1.5rem;
         }
-        .lista-levar li {
-            background: var(--white);
-            padding: 0.8rem 1rem;
-            border-radius: 8px;
-            font-size: 0.95rem;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-        }
+        .lista-levar li { background: var(--white); padding: 0.8rem 1rem; border-radius: 8px; font-size: 0.95rem; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
 
         /* AVISO HUMOR */
         .aviso-legal {
@@ -289,30 +292,9 @@
             text-align: center;
             margin: 2rem 0;
         }
-        .aviso-legal h3 {
-            color: var(--gold-light);
-            font-family: 'Playfair Display', serif;
-            margin-bottom: 1rem;
-            font-size: 1.3rem;
-        }
-        .aviso-legal p {
-            line-height: 1.7;
-            font-size: 0.95rem;
-            opacity: 0.9;
-        }
-        .aviso-legal .emoji-big {
-            font-size: 3rem;
-            display: block;
-            margin-bottom: 1rem;
-        }
-
-        /* FOTO GALERIA */
-        .foto-destaque {
-            width: 100%;
-            border-radius: 12px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
-            margin: 2rem 0;
-        }
+        .aviso-legal h3 { color: var(--gold-light); font-family: 'Playfair Display', serif; margin-bottom: 1rem; font-size: 1.3rem; }
+        .aviso-legal p { line-height: 1.7; font-size: 0.95rem; opacity: 0.9; }
+        .aviso-legal .emoji-big { font-size: 3rem; display: block; margin-bottom: 1rem; }
 
         /* FORM */
         .form-section {
@@ -322,18 +304,9 @@
             box-shadow: 0 10px 40px rgba(0,0,0,0.08);
             border: 2px solid var(--green-light);
         }
-
-        .form-group {
-            margin-bottom: 1.2rem;
-        }
-        .form-group label {
-            display: block;
-            font-weight: 600;
-            margin-bottom: 0.4rem;
-            font-size: 0.9rem;
-            color: var(--dark);
-        }
-        .form-group input {
+        .form-group { margin-bottom: 1.2rem; }
+        .form-group label { display: block; font-weight: 600; margin-bottom: 0.4rem; font-size: 0.9rem; color: var(--dark); }
+        .form-group input, .form-group select {
             width: 100%;
             padding: 0.8rem 1rem;
             border: 2px solid #e0e0e0;
@@ -341,22 +314,12 @@
             font-size: 1rem;
             font-family: 'Inter', sans-serif;
             transition: border-color 0.3s;
+            background: white;
         }
-        .form-group input:focus {
-            outline: none;
-            border-color: var(--green);
-        }
+        .form-group input:focus, .form-group select:focus { outline: none; border-color: var(--green); }
 
-        .acompanhante-item {
-            display: flex;
-            gap: 0.5rem;
-            margin-bottom: 0.5rem;
-            animation: fadeIn 0.3s ease;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+        .acompanhante-item { display: flex; gap: 0.5rem; margin-bottom: 0.5rem; animation: fadeIn 0.3s ease; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
         .acompanhante-item input {
             flex: 1;
             padding: 0.7rem 1rem;
@@ -365,20 +328,8 @@
             font-size: 0.95rem;
             font-family: 'Inter', sans-serif;
         }
-        .acompanhante-item input:focus {
-            outline: none;
-            border-color: var(--green);
-        }
-        .btn-remove {
-            background: var(--red);
-            color: var(--white);
-            border: none;
-            border-radius: 8px;
-            width: 42px;
-            cursor: pointer;
-            font-size: 1.2rem;
-            transition: opacity 0.2s;
-        }
+        .acompanhante-item input:focus { outline: none; border-color: var(--green); }
+        .btn-remove { background: var(--red); color: var(--white); border: none; border-radius: 8px; width: 42px; cursor: pointer; font-size: 1.2rem; transition: opacity 0.2s; }
         .btn-remove:hover { opacity: 0.8; }
 
         .btn-add {
@@ -394,10 +345,7 @@
             transition: all 0.3s;
             margin-top: 0.5rem;
         }
-        .btn-add:hover {
-            background: var(--green);
-            color: var(--white);
-        }
+        .btn-add:hover { background: var(--green); color: var(--white); }
 
         .declaracao {
             background: #fef9e7;
@@ -408,34 +356,12 @@
             font-size: 0.85rem;
             line-height: 1.6;
         }
-        .declaracao strong {
-            color: var(--dark);
-        }
-        .declaracao .nome-dinamico {
-            color: var(--green);
-            font-weight: 700;
-            text-decoration: underline;
-        }
+        .declaracao strong { color: var(--dark); }
+        .declaracao .nome-dinamico { color: var(--green); font-weight: 700; text-decoration: underline; }
 
-        .checkbox-group {
-            display: flex;
-            align-items: flex-start;
-            gap: 0.8rem;
-            margin: 1.5rem 0;
-        }
-        .checkbox-group input[type="checkbox"] {
-            width: 22px;
-            height: 22px;
-            margin-top: 2px;
-            accent-color: var(--green);
-            cursor: pointer;
-            flex-shrink: 0;
-        }
-        .checkbox-group label {
-            font-size: 0.9rem;
-            line-height: 1.5;
-            cursor: pointer;
-        }
+        .checkbox-group { display: flex; align-items: flex-start; gap: 0.8rem; margin: 1.5rem 0; }
+        .checkbox-group input[type="checkbox"] { width: 22px; height: 22px; margin-top: 2px; accent-color: var(--green); cursor: pointer; flex-shrink: 0; }
+        .checkbox-group label { font-size: 0.9rem; line-height: 1.5; cursor: pointer; }
 
         .btn-confirmar {
             width: 100%;
@@ -451,113 +377,185 @@
             text-transform: uppercase;
             letter-spacing: 2px;
             transition: all 0.3s;
-            position: relative;
-            overflow: hidden;
         }
-        .btn-confirmar:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(45,106,79,0.4);
-        }
-        .btn-confirmar:disabled {
-            opacity: 0.5;
-            cursor: not-allowed;
-            transform: none;
-        }
+        .btn-confirmar:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(45,106,79,0.4); }
+        .btn-confirmar:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
 
         /* SUCESSO */
-        .sucesso-overlay {
-            display: none;
-            position: fixed;
-            inset: 0;
-            background: rgba(0,0,0,0.8);
-            z-index: 1000;
-            align-items: center;
-            justify-content: center;
-            padding: 2rem;
-        }
+        .sucesso-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.8); z-index: 1000; align-items: center; justify-content: center; padding: 2rem; }
         .sucesso-overlay.active { display: flex; }
-        .sucesso-card {
-            background: var(--white);
-            border-radius: 16px;
-            padding: 2.5rem;
-            text-align: center;
-            max-width: 500px;
-            width: 100%;
-            animation: popIn 0.5s ease;
-        }
-        @keyframes popIn {
-            from { transform: scale(0.8); opacity: 0; }
-            to { transform: scale(1); opacity: 1; }
-        }
+        .sucesso-card { background: var(--white); border-radius: 16px; padding: 2.5rem; text-align: center; max-width: 500px; width: 100%; animation: popIn 0.5s ease; }
+        @keyframes popIn { from { transform: scale(0.8); opacity: 0; } to { transform: scale(1); opacity: 1; } }
         .sucesso-card .check { font-size: 4rem; }
-        .sucesso-card h2 {
-            font-family: 'Playfair Display', serif;
-            margin: 1rem 0 0.5rem;
-            color: var(--green);
-        }
+        .sucesso-card h2 { font-family: 'Playfair Display', serif; margin: 1rem 0 0.5rem; color: var(--green); }
         .sucesso-card p { line-height: 1.6; color: #555; }
-        .sucesso-card .protocolo {
-            background: #f0f0f0;
-            padding: 0.5rem 1rem;
-            border-radius: 6px;
-            font-family: monospace;
-            font-size: 0.85rem;
-            margin: 1rem 0;
-            display: inline-block;
-        }
-
-        /* FOOTER */
-        footer {
-            text-align: center;
-            padding: 2rem;
-            background: var(--dark);
-            color: rgba(255,255,255,0.6);
-            font-size: 0.8rem;
-        }
-        footer .gold { color: var(--gold-light); }
+        .sucesso-card .protocolo { background: #f0f0f0; padding: 0.5rem 1rem; border-radius: 6px; font-family: monospace; font-size: 0.85rem; margin: 1rem 0; display: inline-block; }
 
         /* CONTADOR */
-        .countdown {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            margin: 2rem 0;
-            flex-wrap: wrap;
-        }
-        .countdown-item {
-            background: var(--white);
-            border-radius: 10px;
-            padding: 1rem 1.2rem;
-            min-width: 80px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
-        }
-        .countdown-item .number {
-            font-family: 'Playfair Display', serif;
-            font-size: 2rem;
-            font-weight: 900;
-            color: var(--green);
-        }
-        .countdown-item .label {
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: #888;
-        }
+        .countdown { display: flex; gap: 1rem; justify-content: center; margin: 2rem 0; flex-wrap: wrap; }
+        .countdown-item { background: var(--white); border-radius: 10px; padding: 1rem 1.2rem; min-width: 80px; box-shadow: 0 4px 15px rgba(0,0,0,0.06); }
+        .countdown-item .number { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 900; color: var(--green); }
+        .countdown-item .label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px; color: #888; }
 
-        /* RESPONSIVE */
+        /* FOOTER */
+        footer { text-align: center; padding: 2rem; background: var(--dark); color: rgba(255,255,255,0.6); font-size: 0.8rem; }
+        footer .gold { color: var(--gold-light); }
+
         @media (max-width: 600px) {
             section { padding: 3rem 1rem; }
             .decreto { padding: 2rem 1.2rem; }
             .form-section { padding: 1.5rem 1.2rem; }
             .selo { width: 90px; height: 90px; line-height: 90px; }
+            .atividades-grid { grid-template-columns: repeat(3, 1fr); }
         }
     </style>
 </head>
 <body>
 
-<!-- HERO -->
+<!-- HERO COM ILUSTRAÇÃO -->
 <section class="hero">
-    <div class="hero-bg"></div>
+    <div class="hero-illustration">
+        <svg viewBox="0 0 1440 900" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg">
+            <!-- Céu com gradiente sunset -->
+            <defs>
+                <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#1a2a4a"/>
+                    <stop offset="35%" stop-color="#2a4a7a"/>
+                    <stop offset="55%" stop-color="#e08040"/>
+                    <stop offset="65%" stop-color="#f4a460"/>
+                    <stop offset="70%" stop-color="#ffd89b"/>
+                </linearGradient>
+                <linearGradient id="water" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#3a7ab0"/>
+                    <stop offset="40%" stop-color="#2a6a9a"/>
+                    <stop offset="100%" stop-color="#1a4a6a"/>
+                </linearGradient>
+                <linearGradient id="grass" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#3a8a3a"/>
+                    <stop offset="100%" stop-color="#1a5a2a"/>
+                </linearGradient>
+                <radialGradient id="sun" cx="50%" cy="50%">
+                    <stop offset="0%" stop-color="#fff8e0"/>
+                    <stop offset="50%" stop-color="#ffcc44"/>
+                    <stop offset="100%" stop-color="#f4a460" stop-opacity="0"/>
+                </radialGradient>
+                <linearGradient id="fireGlow" cx="50%" cy="100%">
+                    <stop offset="0%" stop-color="#ff6600" stop-opacity="0.6"/>
+                    <stop offset="100%" stop-color="#ff6600" stop-opacity="0"/>
+                </linearGradient>
+            </defs>
+
+            <!-- Céu -->
+            <rect width="1440" height="900" fill="url(#sky)"/>
+
+            <!-- Sol -->
+            <circle cx="720" cy="430" r="80" fill="url(#sun)"/>
+            <circle cx="720" cy="430" r="35" fill="#ffe880" opacity="0.9"/>
+
+            <!-- Montanhas ao fundo -->
+            <polygon points="0,500 150,360 300,420 450,340 600,400 750,320 900,380 1050,350 1200,390 1350,330 1440,400 1440,500" fill="#2a4a2a" opacity="0.7"/>
+            <polygon points="0,500 200,400 400,450 550,380 700,440 900,370 1100,420 1300,380 1440,430 1440,500" fill="#3a5a3a" opacity="0.8"/>
+
+            <!-- Margem de árvores -->
+            <ellipse cx="100" cy="490" rx="70" ry="50" fill="#2a5a2a"/>
+            <ellipse cx="200" cy="480" rx="80" ry="55" fill="#1a4a1a"/>
+            <ellipse cx="1250" cy="485" rx="90" ry="55" fill="#2a5a2a"/>
+            <ellipse cx="1380" cy="490" rx="70" ry="45" fill="#1a4a1a"/>
+
+            <!-- Água / Rio -->
+            <rect x="0" y="500" width="1440" height="250" fill="url(#water)"/>
+            <!-- Reflexo do sol na água -->
+            <ellipse cx="720" cy="530" rx="120" ry="15" fill="#ffd89b" opacity="0.3"/>
+            <ellipse cx="720" cy="560" rx="80" ry="8" fill="#ffcc44" opacity="0.2"/>
+            <!-- Ondulações -->
+            <path d="M0,540 Q100,535 200,540 T400,540 T600,540 T800,540 T1000,540 T1200,540 T1440,540" stroke="rgba(255,255,255,0.1)" stroke-width="1" fill="none"/>
+            <path d="M0,570 Q120,565 240,570 T480,570 T720,570 T960,570 T1200,570 T1440,570" stroke="rgba(255,255,255,0.08)" stroke-width="1" fill="none"/>
+
+            <!-- Prainha (areia) -->
+            <ellipse cx="720" cy="710" rx="280" ry="30" fill="#e8d5a0"/>
+            <ellipse cx="720" cy="715" rx="250" ry="20" fill="#f0deb0"/>
+
+            <!-- Gramado -->
+            <rect x="0" y="700" width="1440" height="200" fill="url(#grass)"/>
+            <path d="M0,700 Q200,690 400,700 T800,695 T1200,700 T1440,698 L1440,900 L0,900 Z" fill="#2d6a3a"/>
+
+            <!-- Pier / Deck de madeira -->
+            <rect x="650" y="610" width="140" height="100" fill="#8B6914" rx="2"/>
+            <rect x="645" y="605" width="150" height="8" fill="#9B7924" rx="2"/>
+            <!-- Tábuas do pier -->
+            <line x1="650" y1="625" x2="790" y2="625" stroke="#7a5a10" stroke-width="1" opacity="0.5"/>
+            <line x1="650" y1="645" x2="790" y2="645" stroke="#7a5a10" stroke-width="1" opacity="0.5"/>
+            <line x1="650" y1="665" x2="790" y2="665" stroke="#7a5a10" stroke-width="1" opacity="0.5"/>
+            <line x1="650" y1="685" x2="790" y2="685" stroke="#7a5a10" stroke-width="1" opacity="0.5"/>
+            <!-- Estacas -->
+            <rect x="660" y="700" width="8" height="30" fill="#6a4a08"/>
+            <rect x="770" y="700" width="8" height="30" fill="#6a4a08"/>
+
+            <!-- Lancha no rio -->
+            <g transform="translate(350, 540)">
+                <path d="M0,15 Q10,-5 50,-5 L80,-5 Q95,0 90,15 Z" fill="#ffffff"/>
+                <path d="M0,15 Q10,25 45,25 L65,25 Q90,22 90,15 Z" fill="#e0e0e0"/>
+                <rect x="30" y="-15" width="25" height="12" fill="#3a6a9a" rx="2"/>
+                <line x1="45" y1="-15" x2="45" y2="-30" stroke="#333" stroke-width="2"/>
+                <polygon points="45,-30 70,-22 45,-18" fill="#ff4444" opacity="0.8"/>
+            </g>
+
+            <!-- Jet Ski -->
+            <g transform="translate(950, 550)">
+                <path d="M0,10 Q5,-2 25,-5 L45,-5 Q55,0 50,10 Z" fill="#ff6600"/>
+                <path d="M0,10 Q10,18 25,18 L35,18 Q50,16 50,10 Z" fill="#cc5500"/>
+                <circle cx="30" cy="-10" r="6" fill="#ffd89b"/>
+                <line x1="50" y1="5" x2="70" y2="15" stroke="rgba(255,255,255,0.5)" stroke-width="2"/>
+            </g>
+
+            <!-- Espuma do jet ski -->
+            <path d="M960,565 Q975,562 985,565 Q990,568 985,570" stroke="white" stroke-width="1.5" fill="none" opacity="0.5"/>
+
+            <!-- Fogueira / Fogo de chão no gramado -->
+            <g transform="translate(500, 760)">
+                <!-- Pedras -->
+                <ellipse cx="0" cy="5" rx="25" ry="8" fill="#666"/>
+                <ellipse cx="-15" cy="2" rx="8" ry="6" fill="#555"/>
+                <ellipse cx="15" cy="2" rx="8" ry="6" fill="#555"/>
+                <!-- Lenha -->
+                <rect x="-12" y="-3" width="24" height="5" fill="#8B4513" rx="2" transform="rotate(-15)"/>
+                <rect x="-12" y="-3" width="24" height="5" fill="#6B3310" rx="2" transform="rotate(15)"/>
+                <!-- Chamas -->
+                <ellipse cx="0" cy="-10" rx="12" ry="18" fill="#ff6600" opacity="0.8">
+                    <animate attributeName="ry" values="18;22;18" dur="0.8s" repeatCount="indefinite"/>
+                </ellipse>
+                <ellipse cx="0" cy="-14" rx="7" ry="12" fill="#ffaa00" opacity="0.9">
+                    <animate attributeName="ry" values="12;15;12" dur="0.6s" repeatCount="indefinite"/>
+                </ellipse>
+                <ellipse cx="0" cy="-16" rx="4" ry="8" fill="#ffdd44">
+                    <animate attributeName="ry" values="8;10;8" dur="0.5s" repeatCount="indefinite"/>
+                </ellipse>
+                <!-- Brilho -->
+                <circle cx="0" cy="-5" r="40" fill="#ff6600" opacity="0.08"/>
+            </g>
+
+            <!-- Churrasqueira -->
+            <g transform="translate(900, 755)">
+                <rect x="-20" y="0" width="40" height="25" fill="#8a3a0a" rx="3"/>
+                <rect x="-25" y="-3" width="50" height="5" fill="#999" rx="1"/>
+                <!-- Fumacinha -->
+                <path d="M-5,-10 Q-8,-25 0,-35 Q8,-25 5,-10" stroke="#aaa" stroke-width="2" fill="none" opacity="0.4">
+                    <animate attributeName="opacity" values="0.4;0.1;0.4" dur="3s" repeatCount="indefinite"/>
+                </path>
+                <path d="M5,-8 Q10,-22 2,-32" stroke="#aaa" stroke-width="1.5" fill="none" opacity="0.3">
+                    <animate attributeName="opacity" values="0.3;0.05;0.3" dur="2.5s" repeatCount="indefinite"/>
+                </path>
+            </g>
+
+            <!-- Estrelas (poucas, céu entardecer) -->
+            <circle cx="200" cy="60" r="1.5" fill="white" opacity="0.6"/>
+            <circle cx="500" cy="40" r="1" fill="white" opacity="0.5"/>
+            <circle cx="900" cy="80" r="1.5" fill="white" opacity="0.4"/>
+            <circle cx="1200" cy="50" r="1" fill="white" opacity="0.5"/>
+            <circle cx="350" cy="120" r="1" fill="white" opacity="0.3"/>
+        </svg>
+    </div>
+
     <div class="hero-content">
         <div class="selo">
             <div class="selo-text">CONVITE OFICIAL</div>
@@ -595,6 +593,11 @@
             e que seria uma lástima você perder essa oportunidade;
         </p>
         <p>
+            <strong>CONSIDERANDO</strong> que haverá <strong>churrasco de dar inveja</strong>, 
+            <strong>passeio de lancha</strong>, <strong>jet ski</strong>, prainha no rio, 
+            fogo de chão sob as estrelas e toda a hospitalidade mineira que você merece;
+        </p>
+        <p>
             <strong>DECRETA:</strong>
         </p>
         <p>
@@ -608,7 +611,8 @@
         </p>
         <p>
             <strong>Art. 3º</strong> — O convidado deverá confirmar presença através do formulário 
-            disponível nesta página, sob pena de ficar de fora da melhor comida de Minas.
+            disponível nesta página, sob pena de ficar de fora do melhor churrasco de Minas 
+            e de ter que assistir as fotos do jet ski de longe.
         </p>
         <p>
             <strong>Parágrafo único:</strong> O presente decreto entra em vigor na data de sua publicação, 
@@ -616,6 +620,54 @@
         </p>
         <div class="assinatura">Gilson Vilela</div>
         <div class="cargo">Patriarca · Anfitrião · Dono do Sítio</div>
+    </div>
+</section>
+
+<!-- O QUE TE ESPERA -->
+<section>
+    <h2 class="section-title">O Que Te Espera</h2>
+    <div class="section-divider">✦ ✦ ✦</div>
+    
+    <div class="atividades-hero">
+        <h3>Um Final de Semana de Respeito 🔥</h3>
+        <div class="atividades-grid">
+            <div class="atividade-item">
+                <span class="emoji">🥩</span>
+                <span class="nome">Churrasco</span>
+            </div>
+            <div class="atividade-item">
+                <span class="emoji">🚤</span>
+                <span class="nome">Lancha</span>
+            </div>
+            <div class="atividade-item">
+                <span class="emoji">🏄</span>
+                <span class="nome">Jet Ski</span>
+            </div>
+            <div class="atividade-item">
+                <span class="emoji">🏖️</span>
+                <span class="nome">Prainha</span>
+            </div>
+            <div class="atividade-item">
+                <span class="emoji">🔥</span>
+                <span class="nome">Fogo de Chão</span>
+            </div>
+            <div class="atividade-item">
+                <span class="emoji">🎣</span>
+                <span class="nome">Pescaria</span>
+            </div>
+            <div class="atividade-item">
+                <span class="emoji">🍻</span>
+                <span class="nome">Cerveja Gelada</span>
+            </div>
+            <div class="atividade-item">
+                <span class="emoji">🌅</span>
+                <span class="nome">Pôr do Sol</span>
+            </div>
+            <div class="atividade-item">
+                <span class="emoji">🎶</span>
+                <span class="nome">Boa Música</span>
+            </div>
+        </div>
     </div>
 </section>
 
@@ -661,20 +713,10 @@
         </div>
         <div class="detalhe-card">
             <div class="icon">🍖</div>
-            <h4>Comida</h4>
-            <p>Comida mineira da melhor qualidade, feita com amor e muito tempero!</p>
+            <h4>Gastronomia</h4>
+            <p>Churrasco de primeira, comida mineira com todo amor e tempero de Minas!</p>
         </div>
     </div>
-</section>
-
-<!-- FOTO DO FUNIL -->
-<section style="text-align:center;">
-    <h2 class="section-title">Conheça o Funil</h2>
-    <div class="section-divider">✦ ✦ ✦</div>
-    <img src="img/funil.jpg" alt="Funil — Ijaci, Minas Gerais" class="foto-destaque" onerror="this.style.display='none'">
-    <p style="color:#888; font-size:0.9rem; margin-top:1rem;">
-        Um verdadeiro paraíso escondido em Minas Gerais 🏞️
-    </p>
 </section>
 
 <!-- O QUE LEVAR -->
@@ -683,12 +725,12 @@
     <div class="section-divider">✦ ✦ ✦</div>
     <ul class="lista-levar">
         <li>🩴 Roupas leves e confortáveis</li>
-        <li>🏊 Roupa de banho</li>
+        <li>🏊 Roupa de banho / biquíni</li>
         <li>🧴 Protetor solar</li>
+        <li>🕶️ Óculos de sol</li>
         <li>🎣 Espírito de aventura</li>
-        <li>🎶 Boa vontade pra cantar</li>
-        <li>🤗 Sorriso no rosto</li>
         <li>📸 Câmera / celular carregado</li>
+        <li>🤗 Sorriso no rosto</li>
         <li>💤 Vontade de descansar</li>
     </ul>
 </section>
@@ -700,11 +742,13 @@
         <h3>Aviso Legal Importantíssimo</h3>
         <p>
             Este convite tem <strong>validade jurídica de compadre</strong> e está registrado em 
-            cartório imaginário. Qualquer tentativa de alegar que "não sabia", "não vi" ou 
+            cartório imaginário (Ofício do 1º Tabelionato de Convites do Funil). 
+            Qualquer tentativa de alegar que "não sabia", "não vi" ou 
             "foi convite de boca" será <strong>sumariamente desmentida</strong> com print desta página 
             e depoimento de testemunhas (inclusive o cachorro do sítio).<br><br>
             Em caso de não comparecimento sem justificativa, o convidado fica sujeito a 
-            <strong>olhar de reprovação do Seu Gilson</strong> por tempo indeterminado. 👀
+            <strong>olhar de reprovação do Seu Gilson</strong> por tempo indeterminado e perderá 
+            o direito de reclamar que "nunca foi convidado" pelo período de 10 (dez) anos. 👀
         </p>
     </div>
 </section>
@@ -717,13 +761,13 @@
     <div class="form-section">
         <form id="formConfirmacao" action="https://formsubmit.co/gavjr1911@gmail.com" method="POST">
             <!-- FormSubmit config -->
-            <input type="hidden" name="_subject" value="🏡 CONFIRMAÇÃO — Casa do Vovô Gilson">
+            <input type="hidden" name="_subject" value="🏡 CONFIRMAÇÃO — Casa do Vovô Gilson | Funil">
             <input type="hidden" name="_template" value="table">
             <input type="hidden" name="_captcha" value="false">
             <input type="hidden" name="_next" value="">
             <input type="text" name="_honey" style="display:none">
             
-            <input type="hidden" name="_autoresponse" value="✅ Sua presença foi OFICIALMENTE confirmada para a Casa do Vovô Gilson, no Funil em Ijaci-MG, de 4 a 6 de Dezembro de 2026! A Família Vilela aguarda vocês de braços abertos! 🏡">
+            <input type="hidden" name="_autoresponse" value="✅ Sua presença foi OFICIALMENTE confirmada para a Casa do Vovô Gilson, no Funil em Ijaci-MG, de 4 a 6 de Dezembro de 2026! Prepare-se para churrasco, lancha, jet ski e muita diversão! A Família Vilela aguarda vocês de braços abertos! 🏡🥩🚤">
 
             <div class="form-group">
                 <label>👤 Seu nome completo *</label>
@@ -750,7 +794,7 @@
                 "Eu, <span class="nome-dinamico" id="nomeDinamico">[seu nome]</span>, 
                 estou confirmando <strong>com toda certeza</strong> que vou participar do evento 
                 <em>Casa do Vovô Gilson</em> no Funil, Ijaci-MG, nos dias 4 a 6 de Dezembro de 2026, 
-                e declaro que fui <strong>convidado(a) pelo Senhor Gilson, com todas as letras</strong>, 
+                e declaro que fui <strong>convidado(a) pelo Senhor Gilson, COM TODAS AS LETRAS</strong>, 
                 para participar desse evento. Não poderei, em tempo algum, alegar que não fui 
                 convidado(a), pois este documento serve como prova cabal e irrefutável do convite."
             </div>
@@ -783,14 +827,15 @@
         </p>
         <div class="protocolo" id="protocolo"></div>
         <p style="margin-top:1rem; font-size:0.85rem; color:#888;">
-            Uma cópia foi enviada para o e-mail do anfitrião. <br>
+            Uma cópia foi enviada para o e-mail do anfitrião.<br>
+            Prepare o protetor solar e a roupa de banho! 🏖️<br>
             Nos vemos no Funil! 🏡
         </p>
     </div>
 </div>
 
 <footer>
-    <p class="gold">Casa do Vovô Gilson · Funil · Ijaci — MG</p>
+    <p class="gold">🏡 Casa do Vovô Gilson · Funil · Ijaci — MG</p>
     <p style="margin-top:0.5rem;">Convite OFICIAL nº 001/2026 — Família Vilela</p>
     <p style="margin-top:0.5rem;">Feito com ❤️ e uma pitada de "eu avisei que tinha convite"</p>
 </footer>
@@ -861,7 +906,7 @@
         document.getElementById('totalPessoas').value = 1 + acomps.length;
         
         // Declaração
-        const decl = `Eu, ${nome}, estou confirmando com toda certeza que vou participar do evento Casa do Vovô Gilson no Funil, Ijaci-MG, nos dias 4 a 6 de Dezembro de 2026, e declaro que fui convidado(a) pelo Senhor Gilson, com todas as letras, para participar desse evento.`;
+        const decl = `Eu, ${nome}, estou confirmando com toda certeza que vou participar do evento Casa do Vovô Gilson no Funil, Ijaci-MG, nos dias 4 a 6 de Dezembro de 2026, e declaro que fui convidado(a) pelo Senhor Gilson, COM TODAS AS LETRAS, para participar desse evento.`;
         document.getElementById('declaracaoHidden').value = decl;
         
         // Configurar URL de retorno
@@ -877,7 +922,6 @@
         overlay.classList.add('active');
         const proto = 'CVG-' + Date.now().toString(36).toUpperCase();
         document.getElementById('protocolo').textContent = 'Protocolo: ' + proto;
-        // Limpar URL
         history.replaceState(null, '', window.location.pathname);
     }
 
