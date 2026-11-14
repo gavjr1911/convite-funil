@@ -43,7 +43,7 @@
             justify-content: center;
             text-align: center;
             overflow: hidden;
-            background: linear-gradient(180deg, #1a2a4a 0%, #2a4a7a 30%, #5a9abf 50%, #8ac4e0 60%, #d4eaf5 70%, #3a8a4a 70.1%, #2d6a3a 100%);
+            background: #1a2a4a;
         }
         .hero-illustration {
             position: absolute;
@@ -51,12 +51,17 @@
             z-index: 0;
             overflow: hidden;
         }
-        .hero-illustration svg {
-            position: absolute;
-            bottom: 0;
-            left: 0;
+        .hero-illustration img {
             width: 100%;
             height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+        .hero-illustration::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(26,42,74,0.5) 0%, rgba(0,0,0,0.3) 40%, rgba(0,0,0,0.4) 70%, rgba(26,42,74,0.7) 100%);
         }
 
         .hero-content {
@@ -415,145 +420,7 @@
 <!-- HERO COM ILUSTRAÇÃO -->
 <section class="hero">
     <div class="hero-illustration">
-        <svg viewBox="0 0 1440 900" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg">
-            <!-- Céu com gradiente sunset -->
-            <defs>
-                <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stop-color="#1a2a4a"/>
-                    <stop offset="35%" stop-color="#2a4a7a"/>
-                    <stop offset="55%" stop-color="#e08040"/>
-                    <stop offset="65%" stop-color="#f4a460"/>
-                    <stop offset="70%" stop-color="#ffd89b"/>
-                </linearGradient>
-                <linearGradient id="water" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stop-color="#3a7ab0"/>
-                    <stop offset="40%" stop-color="#2a6a9a"/>
-                    <stop offset="100%" stop-color="#1a4a6a"/>
-                </linearGradient>
-                <linearGradient id="grass" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stop-color="#3a8a3a"/>
-                    <stop offset="100%" stop-color="#1a5a2a"/>
-                </linearGradient>
-                <radialGradient id="sun" cx="50%" cy="50%">
-                    <stop offset="0%" stop-color="#fff8e0"/>
-                    <stop offset="50%" stop-color="#ffcc44"/>
-                    <stop offset="100%" stop-color="#f4a460" stop-opacity="0"/>
-                </radialGradient>
-                <linearGradient id="fireGlow" cx="50%" cy="100%">
-                    <stop offset="0%" stop-color="#ff6600" stop-opacity="0.6"/>
-                    <stop offset="100%" stop-color="#ff6600" stop-opacity="0"/>
-                </linearGradient>
-            </defs>
-
-            <!-- Céu -->
-            <rect width="1440" height="900" fill="url(#sky)"/>
-
-            <!-- Sol -->
-            <circle cx="720" cy="430" r="80" fill="url(#sun)"/>
-            <circle cx="720" cy="430" r="35" fill="#ffe880" opacity="0.9"/>
-
-            <!-- Montanhas ao fundo -->
-            <polygon points="0,500 150,360 300,420 450,340 600,400 750,320 900,380 1050,350 1200,390 1350,330 1440,400 1440,500" fill="#2a4a2a" opacity="0.7"/>
-            <polygon points="0,500 200,400 400,450 550,380 700,440 900,370 1100,420 1300,380 1440,430 1440,500" fill="#3a5a3a" opacity="0.8"/>
-
-            <!-- Margem de árvores -->
-            <ellipse cx="100" cy="490" rx="70" ry="50" fill="#2a5a2a"/>
-            <ellipse cx="200" cy="480" rx="80" ry="55" fill="#1a4a1a"/>
-            <ellipse cx="1250" cy="485" rx="90" ry="55" fill="#2a5a2a"/>
-            <ellipse cx="1380" cy="490" rx="70" ry="45" fill="#1a4a1a"/>
-
-            <!-- Água / Rio -->
-            <rect x="0" y="500" width="1440" height="250" fill="url(#water)"/>
-            <!-- Reflexo do sol na água -->
-            <ellipse cx="720" cy="530" rx="120" ry="15" fill="#ffd89b" opacity="0.3"/>
-            <ellipse cx="720" cy="560" rx="80" ry="8" fill="#ffcc44" opacity="0.2"/>
-            <!-- Ondulações -->
-            <path d="M0,540 Q100,535 200,540 T400,540 T600,540 T800,540 T1000,540 T1200,540 T1440,540" stroke="rgba(255,255,255,0.1)" stroke-width="1" fill="none"/>
-            <path d="M0,570 Q120,565 240,570 T480,570 T720,570 T960,570 T1200,570 T1440,570" stroke="rgba(255,255,255,0.08)" stroke-width="1" fill="none"/>
-
-            <!-- Prainha (areia) -->
-            <ellipse cx="720" cy="710" rx="280" ry="30" fill="#e8d5a0"/>
-            <ellipse cx="720" cy="715" rx="250" ry="20" fill="#f0deb0"/>
-
-            <!-- Gramado -->
-            <rect x="0" y="700" width="1440" height="200" fill="url(#grass)"/>
-            <path d="M0,700 Q200,690 400,700 T800,695 T1200,700 T1440,698 L1440,900 L0,900 Z" fill="#2d6a3a"/>
-
-            <!-- Pier / Deck de madeira -->
-            <rect x="650" y="610" width="140" height="100" fill="#8B6914" rx="2"/>
-            <rect x="645" y="605" width="150" height="8" fill="#9B7924" rx="2"/>
-            <!-- Tábuas do pier -->
-            <line x1="650" y1="625" x2="790" y2="625" stroke="#7a5a10" stroke-width="1" opacity="0.5"/>
-            <line x1="650" y1="645" x2="790" y2="645" stroke="#7a5a10" stroke-width="1" opacity="0.5"/>
-            <line x1="650" y1="665" x2="790" y2="665" stroke="#7a5a10" stroke-width="1" opacity="0.5"/>
-            <line x1="650" y1="685" x2="790" y2="685" stroke="#7a5a10" stroke-width="1" opacity="0.5"/>
-            <!-- Estacas -->
-            <rect x="660" y="700" width="8" height="30" fill="#6a4a08"/>
-            <rect x="770" y="700" width="8" height="30" fill="#6a4a08"/>
-
-            <!-- Lancha no rio -->
-            <g transform="translate(350, 540)">
-                <path d="M0,15 Q10,-5 50,-5 L80,-5 Q95,0 90,15 Z" fill="#ffffff"/>
-                <path d="M0,15 Q10,25 45,25 L65,25 Q90,22 90,15 Z" fill="#e0e0e0"/>
-                <rect x="30" y="-15" width="25" height="12" fill="#3a6a9a" rx="2"/>
-                <line x1="45" y1="-15" x2="45" y2="-30" stroke="#333" stroke-width="2"/>
-                <polygon points="45,-30 70,-22 45,-18" fill="#ff4444" opacity="0.8"/>
-            </g>
-
-            <!-- Jet Ski -->
-            <g transform="translate(950, 550)">
-                <path d="M0,10 Q5,-2 25,-5 L45,-5 Q55,0 50,10 Z" fill="#ff6600"/>
-                <path d="M0,10 Q10,18 25,18 L35,18 Q50,16 50,10 Z" fill="#cc5500"/>
-                <circle cx="30" cy="-10" r="6" fill="#ffd89b"/>
-                <line x1="50" y1="5" x2="70" y2="15" stroke="rgba(255,255,255,0.5)" stroke-width="2"/>
-            </g>
-
-            <!-- Espuma do jet ski -->
-            <path d="M960,565 Q975,562 985,565 Q990,568 985,570" stroke="white" stroke-width="1.5" fill="none" opacity="0.5"/>
-
-            <!-- Fogueira / Fogo de chão no gramado -->
-            <g transform="translate(500, 760)">
-                <!-- Pedras -->
-                <ellipse cx="0" cy="5" rx="25" ry="8" fill="#666"/>
-                <ellipse cx="-15" cy="2" rx="8" ry="6" fill="#555"/>
-                <ellipse cx="15" cy="2" rx="8" ry="6" fill="#555"/>
-                <!-- Lenha -->
-                <rect x="-12" y="-3" width="24" height="5" fill="#8B4513" rx="2" transform="rotate(-15)"/>
-                <rect x="-12" y="-3" width="24" height="5" fill="#6B3310" rx="2" transform="rotate(15)"/>
-                <!-- Chamas -->
-                <ellipse cx="0" cy="-10" rx="12" ry="18" fill="#ff6600" opacity="0.8">
-                    <animate attributeName="ry" values="18;22;18" dur="0.8s" repeatCount="indefinite"/>
-                </ellipse>
-                <ellipse cx="0" cy="-14" rx="7" ry="12" fill="#ffaa00" opacity="0.9">
-                    <animate attributeName="ry" values="12;15;12" dur="0.6s" repeatCount="indefinite"/>
-                </ellipse>
-                <ellipse cx="0" cy="-16" rx="4" ry="8" fill="#ffdd44">
-                    <animate attributeName="ry" values="8;10;8" dur="0.5s" repeatCount="indefinite"/>
-                </ellipse>
-                <!-- Brilho -->
-                <circle cx="0" cy="-5" r="40" fill="#ff6600" opacity="0.08"/>
-            </g>
-
-            <!-- Churrasqueira -->
-            <g transform="translate(900, 755)">
-                <rect x="-20" y="0" width="40" height="25" fill="#8a3a0a" rx="3"/>
-                <rect x="-25" y="-3" width="50" height="5" fill="#999" rx="1"/>
-                <!-- Fumacinha -->
-                <path d="M-5,-10 Q-8,-25 0,-35 Q8,-25 5,-10" stroke="#aaa" stroke-width="2" fill="none" opacity="0.4">
-                    <animate attributeName="opacity" values="0.4;0.1;0.4" dur="3s" repeatCount="indefinite"/>
-                </path>
-                <path d="M5,-8 Q10,-22 2,-32" stroke="#aaa" stroke-width="1.5" fill="none" opacity="0.3">
-                    <animate attributeName="opacity" values="0.3;0.05;0.3" dur="2.5s" repeatCount="indefinite"/>
-                </path>
-            </g>
-
-            <!-- Estrelas (poucas, céu entardecer) -->
-            <circle cx="200" cy="60" r="1.5" fill="white" opacity="0.6"/>
-            <circle cx="500" cy="40" r="1" fill="white" opacity="0.5"/>
-            <circle cx="900" cy="80" r="1.5" fill="white" opacity="0.4"/>
-            <circle cx="1200" cy="50" r="1" fill="white" opacity="0.5"/>
-            <circle cx="350" cy="120" r="1" fill="white" opacity="0.3"/>
-        </svg>
+        <img src="hero-3d.jpg" alt="Vista panorâmica do Funil - Rio, pier, lancha, jet ski, churrasco e pôr do sol em Ijaci, MG" loading="eager">
     </div>
 
     <div class="hero-content">
